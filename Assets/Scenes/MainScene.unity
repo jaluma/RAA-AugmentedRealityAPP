@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Heart: {fileID: 5721564605845944203, guid: 586fc9d3e13f33948bee956ff899f8f3, type: 3}
-  Distance: 1
+  Distance: 0.7
   AmountOfObjectsToSpawn: 8
   Bone: {fileID: 6682913329686364998, guid: 278c463ac4e4c3446a2d662c32e47e00, type: 3}
 --- !u!135 &660954075
