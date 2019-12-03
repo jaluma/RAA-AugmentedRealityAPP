@@ -15,5 +15,7 @@ public class MovingUp : MonoBehaviour
     {
         float r = (Random.value * 0.2f);
         GetComponent<Rigidbody>().velocity = transform.up * r;
+        var rotB = Quaternion.LookRotation(Camera.main.transform.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotB, 3 * Time.deltaTime);
     }
 }
