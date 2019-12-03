@@ -11,19 +11,19 @@ public class SpawnAroundObject : MonoBehaviour
 
     public void Spawn()
     {
-        //var r = GetComponent<SphereCollider>().radius;
+        var r = GetComponent<SphereCollider>().radius;
         for (var i = 0; i < AmountOfObjectsToSpawn; i++)
         {
             Vector3 randomPos;
             do
             {
                 randomPos = Random.insideUnitSphere * Distance;
-                randomPos.y = 0;
-            } while (Physics.CheckSphere(randomPos, 3));
+            } while (Physics.CheckSphere(randomPos, r / 5 * 3));
+
+            randomPos.y = Mathf.Abs(randomPos.y);
 
             var position = transform.position + randomPos;
             var o = Instantiate(Prefab1, position, Quaternion.identity).gameObject;
-            o.transform.position = randomPos;
             o.transform.parent = transform;
             Destroy(o, 3f);
         }
